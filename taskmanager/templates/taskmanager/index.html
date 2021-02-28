@@ -1,0 +1,21 @@
+{% extends "taskmanager/layouts.html" %}
+
+<header>
+    <h1>What would you like to do today?</h1>
+    <span>{{ currentDate }}</span>
+</header>
+<article>
+    {% if tasks %}
+        <section>
+            <ul>
+                {% for task in tasks %}
+                    <li>
+                        {{ task }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% else %}
+        <span>No tasks yet. Go add some!</span>
+    {% endif %}
+</article>
